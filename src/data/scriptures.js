@@ -11,7 +11,9 @@
   /* Reminder lines paired with ministry events, so the log teaches while it records. */
   const LOG_VERSES = {
     prayer: 'Matthew 6:6 — Pray to your Father who is in secret.',
+    pray: 'Matthew 6:6 — Pray to your Father who is in secret.',
     fasting: 'Matthew 6:17-18 — When you fast, do not look gloomy.',
+    fast: 'Matthew 6:17-18 — When you fast, do not look gloomy.',
     repent: '1 John 1:9 — If we confess our sins, he is faithful to forgive.',
     study: '2 Timothy 2:15 — Rightly handling the word of truth.',
     preachHollow: '1 Corinthians 13:1 — A noisy gong or a clanging cymbal.',
@@ -22,6 +24,9 @@
     compassion: 'Colossians 3:12 — Put on compassion, kindness, humility.',
     harsh: 'Ephesians 4:15 — Speak the truth in love.',
     followUp: '2 Timothy 2:2 — Entrust to faithful people who will teach others.',
+    mentor: '2 Timothy 2:2 — Entrust to faithful people who will teach others.',
+    word: 'Colossians 3:16 — Let the word of Christ dwell in you richly.',
+    restore: 'Galatians 6:1 — Restore them in a spirit of gentleness.',
     drift: 'Hebrews 2:1 — Pay much closer attention to what we have heard.',
     rooted: 'Psalm 1:3 — A tree planted by streams of water.',
     convert: 'Luke 15:7 — Joy over one sinner who repents.',
