@@ -15,8 +15,11 @@
   const PLAYER_MENTOR = 'player';
   const PLAYER_CAPACITY = 3;
 
+  /* Only believers still being carried count against the capacity. Once someone
+     reaches mentor stage they are carrying others, so they free their slot. */
   function playerMentees(state) {
-    return state.people.filter((p) => p.mentor === PLAYER_MENTOR);
+    return state.people.filter((p) => p.mentor === PLAYER_MENTOR
+      && ['newborn', 'growing', 'rooted'].includes(p.stage));
   }
 
   function mentorName(state, person) {
