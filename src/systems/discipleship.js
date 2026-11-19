@@ -177,32 +177,36 @@
     return res;
   }
 
-  /* Called each game tick. Neglected believers drift; they do not stay put. */
+  /* Called each game tick. A believer with a mentor is being followed up, so they
+     grow slowly on their own. An unmentored one starts a drift clock the moment the
+     grace window runs out, and the clock does not stop by itself. */
   function tick(state, dtSeconds, onEvent) {
     const hours = (dtSeconds * U.GAME_MINUTES_PER_REAL_SECOND) / 60;
     state.people.forEach((person) => {
       if (!['newborn', 'growing', 'rooted'].includes(person.stage)) return;
 
-      person.driftTimer = (person.driftTimer || 0) + hours;
-
-      const graceWindow = person.stage === 'newborn' ? 9 : person.stage === 'growing' ? 18 : 30;
-      const neglected = person.driftTimer > graceWindow;
-
-      if (neglected) {
-        const decay = person.stage === 'newborn' ? 7 : person.stage === 'growing' ? 3.4 : 1.6;
-        person.progress = Math.max(0, person.progress - decay * hours);
-        if (person.progress <= 0 && person.stage !== 'drifting') {
-          person.stage = 'drifting';
-          person.driftTimer = 0;
-          if (onEvent) onEvent('drift', person);
-        }
-      } else if (person.mentor) {
+      if (person.mentor) {
+        person.driftTimer = 0;
         person.progress = Math.min(100, person.progress + 0.42 * hours);
         const newStage = stageFor(person.progress);
-        if (newStage !== person.stage && person.stage !== 'drifting') {
+        if (newStage !== person.stage) {
           person.stage = newStage;
           if (onEvent && (newStage === 'rooted' || newStage === 'mentor')) onEvent('mature', person);
         }
+        return;
+      }
+
+      person.driftTimer = (person.driftTimer || 0) + hours;
+
+      const graceWindow = person.stage === 'newborn' ? 9 : person.stage === 'growing' ? 18 : 30;
+      if (person.driftTimer <= graceWindow) return;
+
+      const decay = person.stage === 'newborn' ? 7 : person.stage === 'growing' ? 3.4 : 1.6;
+      person.progress = Math.max(0, person.progress - decay * hours);
+      if (person.progress <= 0) {
+        person.stage = 'drifting';
+        person.driftTimer = 0;
+        if (onEvent) onEvent('drift', person);
       }
     });
   }
