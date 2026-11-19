@@ -654,7 +654,7 @@
       });
 
       this.log(
-        `Preached "${result.record.theme}" at the ${result.venue.name}: ${c.repentant} repentant, ${c.moved} moved, ${c.hostile} hostile.`,
+        `Preached "${result.record.theme}" at the ${result.venue.name}: ${c.repentant} repentant, ${c.moved} moved, ${c.curious} curious, ${c.hostile} hostile of ${c.total}.`,
         p.hollow ? 'preachHollow' : 'preachFaithful',
         p.hollow ? 'bad' : c.repentant > 0 ? 'good' : 'warn',
       );
@@ -701,7 +701,9 @@
                 : `You said something that sounded kind and was not true. They will build on it, and it will not hold. <cite>2 Timothy 2:15</cite>`;
             qWrap.replaceChildren(fb);
             this.log(`Answered a question after the message (${opt.flag}).`,
-              opt.flag === 'gospel' ? 'discern' : opt.flag === 'harsh' ? 'harsh' : 'doctrineError',
+              opt.flag === 'gospel' ? 'discern'
+                : opt.flag === 'honest' ? 'honest'
+                  : opt.flag === 'harsh' ? 'harsh' : 'doctrineError',
               opt.flag === 'gospel' || opt.flag === 'honest' ? 'good' : 'bad');
             api.setActions([{ label: questions.length ? 'Next Question' : 'Finish', primary: true, onClick: askNext }]);
           });

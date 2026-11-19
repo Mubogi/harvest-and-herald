@@ -32,7 +32,8 @@
     convert: 'Luke 15:7 — Joy over one sinner who repents.',
     rest: 'Psalm 127:2 — He gives to his beloved sleep.',
     family: '1 Timothy 3:5 — If someone does not care for their own household...',
-    discern: 'Proverbs 18:13 — Answering before listening is folly.',
+    discern: 'Proverbs 20:5 — A man of understanding draws out the deep water of the heart.',
+    honest: 'Colossians 4:6 — Let your speech be gracious, seasoned with salt.',
     serve: 'Galatians 6:10 — Do good to everyone, especially the household of faith.',
     wrongVerse: '2 Timothy 2:15 — Do not be ashamed, rightly handling the word.',
   };
