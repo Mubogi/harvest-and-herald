@@ -4,6 +4,22 @@ A playable 2D isometric ministry, evangelism, and discipleship simulation that r
 
 You are a gospel worker in a diverse town district. Walk the neighborhoods, listen before you speak, preach with a heart that has actually been in the Secret Place, and stay with the people who respond until they are rooted enough to carry it themselves.
 
+## Download and play
+
+Play in the browser, or install a native build. Both run fully offline and keep your
+progress on your own device.
+
+| Platform | Build | Notes |
+| --- | --- | --- |
+| Any modern browser | [Play now](index.html) | Nothing to install |
+| Android 6+ | [APK](https://github.com/Mubogi/harvest-and-herald/releases/latest/download/HarvestAndHerald-1.0.0.apk) | ~75 KB, installs as an app |
+| Windows 10+ | [ZIP](https://github.com/Mubogi/harvest-and-herald/releases/latest/download/HarvestAndHerald-1.0.0-windows-x64.zip) | Portable, unzip and run |
+| macOS 11+ | [ZIP](https://github.com/Mubogi/harvest-and-herald/releases/latest/download/HarvestAndHerald-1.0.0-macos-x64.zip) | Portable `.app` bundle |
+| Linux x64 | [ZIP](https://github.com/Mubogi/harvest-and-herald/releases/latest/download/HarvestAndHerald-1.0.0-linux-x64.zip) | Portable, `chmod +x` the binary |
+
+All builds are unsigned. Your OS will warn the first time; the install notes on
+[`downloads.html`](downloads.html) cover how to allow each one.
+
 ## Run it
 
 Because the game is split into ES5-style modules loaded by `<script>` tags, any static file server works.
@@ -19,6 +35,19 @@ npx serve .
 Then open <http://localhost:8000>.
 
 Opening `index.html` directly with `file://` also works in most browsers, but a local server avoids any file-protocol quirks.
+
+## Build the native packages
+
+Each platform build is scripted and produces artifacts in `dist/`:
+
+```bash
+packaging/build-android.sh                 # signed APK (needs JDK 17 + Android SDK 34)
+packaging/build-desktop.sh                 # Linux, Windows, macOS zips (needs Node)
+packaging/build-desktop.sh linux           # or pick specific targets
+```
+
+The desktop builds wrap the same web bundle in Electron, so `index.html` remains the
+single source of truth for the game.
 
 ## Controls
 

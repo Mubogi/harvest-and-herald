@@ -1,0 +1,10 @@
+{
+  "name": "harvest-and-herald",
+  "productName": "Harvest & Herald",
+  "version": "1.0.0",
+  "description": "A 2D isometric ministry, evangelism and discipleship simulation.",
+  "main": "main.js",
+  "author": "Harvest & Herald",
+  "license": "MIT",
+  "private": true
+}

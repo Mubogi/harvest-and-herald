@@ -1,0 +1,201 @@
+/* Downloads hub. Reuses the game's palette so the two pages feel like one product. */
+
+.dl-page {
+  overflow: auto;
+  min-height: 100%;
+}
+
+.dl-wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+.dl-head {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.dl-head .brand-mark {
+  font-size: 34px;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 24px rgba(216, 169, 74, .45);
+}
+
+.dl-head h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: .5px;
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.dl-sub {
+  margin: 6px 0 0;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  font-size: 11px;
+  color: #a9997f;
+}
+
+.dl-intro {
+  max-width: 620px;
+  margin: 22px auto 44px;
+  text-align: center;
+  color: #cbbfa9;
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.dl-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 22px 22px;
+  background: linear-gradient(180deg, rgba(58, 49, 40, .92), rgba(31, 26, 22, .95));
+  border: 1px solid #4b3f33;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.dl-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .55);
+}
+
+.dl-feature {
+  border-color: rgba(216, 169, 74, .55);
+  background: linear-gradient(180deg, rgba(72, 58, 33, .95), rgba(38, 30, 20, .97));
+}
+
+.dl-icon {
+  font-size: 22px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.dl-card h2 {
+  margin: 0;
+  font-size: 19px;
+  color: var(--parchment);
+  font-weight: 600;
+}
+
+.dl-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #b8ab96;
+  flex: 1;
+}
+
+.dl-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  border: 1px solid #57493c;
+  color: var(--parchment);
+  background: linear-gradient(180deg, #3a3128, #241e19);
+  transition: background .15s ease, border-color .15s ease, transform .08s ease;
+}
+
+.dl-btn:hover {
+  background: linear-gradient(180deg, #4a3f33, #2c251f);
+  border-color: var(--gold);
+}
+
+.dl-btn:active { transform: translateY(1px); }
+
+.dl-btn.primary {
+  background: linear-gradient(180deg, #b8892f, #8a6320);
+  border-color: var(--gold-soft);
+  color: #1c1508;
+  font-weight: 700;
+}
+
+.dl-btn.primary:hover { background: linear-gradient(180deg, #d3a23f, #9d7226); }
+
+.dl-note {
+  font-size: 11px;
+  color: #8d8172;
+  letter-spacing: .02em;
+}
+
+.dl-help {
+  margin-top: 48px;
+  padding: 26px 26px 8px;
+  background: rgba(20, 17, 15, .6);
+  border: 1px solid #3a322a;
+  border-radius: 12px;
+}
+
+.dl-help h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.dl-help dl { margin: 0; }
+
+.dl-help dt {
+  font-weight: 700;
+  color: var(--parchment);
+  font-size: 13.5px;
+  margin-top: 14px;
+}
+
+.dl-help dd {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #b0a48f;
+}
+
+.dl-help code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: #100d0b;
+  border: 1px solid #332c25;
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--gold-soft);
+}
+
+.dl-foot {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.dl-foot a { color: var(--gold-soft); text-decoration: none; }
+.dl-foot a:hover { text-decoration: underline; }
+
+.dl-verse {
+  margin-top: 18px;
+  font-size: 12px;
+  font-style: italic;
+  color: #7d7264;
+}
+
+@media (max-width: 560px) {
+  .dl-wrap { padding: 36px 16px 56px; }
+  .dl-head h1 { font-size: 30px; }
+}
