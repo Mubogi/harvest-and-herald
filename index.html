@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Harvest &amp; Herald: The Great Commission</title>
+<meta name="description" content="A playable 2D isometric ministry, evangelism and discipleship simulation." />
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-mark">&#10013;</span>
+      <div class="brand-text">
+        <h1>Harvest &amp; Herald</h1>
+        <p>The Great Commission</p>
+      </div>
+    </div>
+
+    <div id="clockBox">
+      <span id="dayLabel">Day 1</span>
+      <span id="clockLabel">6:00 AM</span>
+      <span id="phaseLabel" class="phase">Morning</span>
+    </div>
+
+    <div id="speedControls" role="group" aria-label="Game speed">
+      <button data-speed="0" title="Pause (Space)">&#10074;&#10074;</button>
+      <button data-speed="1" class="active" title="Normal speed">1&times;</button>
+      <button data-speed="2" title="Double speed">2&times;</button>
+      <button data-speed="4" title="Fast forward">4&times;</button>
+    </div>
+
+    <div id="topActions">
+      <button id="btnSave" title="Save to this browser">Save</button>
+      <button id="btnLoad" title="Load saved game">Load</button>
+      <button id="btnHelp" title="How to play">?</button>
+    </div>
+  </header>
+
+  <main id="layout">
+    <section id="stage">
+      <canvas id="game"></canvas>
+      <div id="zoneBadge">Marketplace</div>
+      <div id="prompt" class="hidden"></div>
+      <div id="toasts"></div>
+      <div id="actionBar"></div>
+    </section>
+
+    <aside id="sidebar"></aside>
+  </main>
+
+  <footer id="logPanel">
+    <div class="log-head">
+      <span>Ministry Log</span>
+      <span class="log-hint">Every entry carries a Scripture reminder</span>
+    </div>
+    <div id="logList"></div>
+  </footer>
+</div>
+
+<div id="modalRoot" class="hidden" aria-hidden="true"></div>
+
+<script src="src/core/utils.js"></script>
+<script src="src/core/iso.js"></script>
+<script src="src/data/scriptures.js"></script>
+<script src="src/data/people.js"></script>
+<script src="src/data/questions.js"></script>
+<script src="src/world/town.js"></script>
+<script src="src/core/state.js"></script>
+<script src="src/systems/innerLife.js"></script>
+<script src="src/systems/encounters.js"></script>
+<script src="src/systems/preaching.js"></script>
+<script src="src/systems/discipleship.js"></script>
+<script src="src/ui/log.js"></script>
+<script src="src/ui/modals.js"></script>
+<script src="src/ui/hud.js"></script>
+<script src="src/render/renderer.js"></script>
+<script src="src/core/game.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
